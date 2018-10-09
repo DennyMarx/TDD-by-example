@@ -12,9 +12,7 @@ target_compile_features(fusion PUBLIC cxx_std_14)
 target_include_directories(fusion
   PUBLIC
     $<BUILD_INTERFACE:>${CMAKE_CURRENT_SOURCE_DIR}/src
-    $<INSTALL_INTERFACE:>${CMAKE_BINARY_DIR}/include
-  PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/extern
+    $<BUILD_INTERFACE:>${CMAKE_CURRENT_SOURCE_DIR}/extern
 )
 
 # Testing

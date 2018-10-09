@@ -7,6 +7,6 @@ public:
         double certainty;
     };
 
-    virtual ~DistanceSensor ();
+    virtual ~DistanceSensor () = default;
     virtual DistanceMeasurement getDistanceToClosestObject() =0;
 };
