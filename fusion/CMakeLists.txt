@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.12)
-include(FetchContent)
 
 project(fusion VERSION 1.0 LANGUAGES CXX)
 
@@ -16,6 +15,10 @@ target_include_directories(fusion
 )
 
 # Testing
+
+enable_testing()
+
+include(FetchContent)
 
 FetchContent_Declare(
   googletest
@@ -36,3 +39,5 @@ add_executable(FusionTest
 target_link_libraries(FusionTest PRIVATE gtest gmock gtest_main fusion)
 target_compile_features(FusionTest PRIVATE cxx_std_14)
 target_include_directories(FusionTest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../extern)
+
+add_test(FusionTests FusionTest)
