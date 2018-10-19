@@ -45,6 +45,7 @@ Let CMake **create a build config**:
     EXPECT_FALSE(boolean);
 
     // Macros for comparing floating-point numbers:
+    
     EXPECT_FLOAT_EQ(val1, val2); // Tests that two float values are almost equal.
     EXPECT_DOUBLE_EQ(val1, val2); // Tests that two double values are almost equal.
     EXPECT_NEAR(v1, v2, abs_error); // Tests that v1 and v2 are within the given distance to each other.
