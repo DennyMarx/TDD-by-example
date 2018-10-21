@@ -10,7 +10,7 @@ class Fusion
 {
 public:
     // constants
-    const static double THRESHOLD_CERTAINTY;
+    const static double kThresholdCertainy;
 
     // c'tor
     Fusion(const std::vector<DistanceSensor*>& distance_sensors,
