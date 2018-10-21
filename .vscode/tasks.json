@@ -4,13 +4,25 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build fusion test",
+            "label": "debug build fusion test",
             "type": "shell",
-            "command": "echo Building fusion via cmake... && cd fusion/build && cmake .. && make",
+            "command": "echo Building fusion debug config via cmake... && cd fusion/build && cmake -DCMAKE_BUILD_TYPE=Debug .. && make",
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "release fusion test",
+            "type": "shell",
+            "command": "echo Building fusion release config via cmake... && cd fusion/build && cmake -DCMAKE_BUILD_TYPE=Release .. && make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }

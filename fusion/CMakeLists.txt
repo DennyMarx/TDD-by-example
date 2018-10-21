@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.12)
 
 project(fusion VERSION 1.0 LANGUAGES CXX)
 
-set(CMAKE_CXX_FLAGS "-g")
+# compile with debug symbols only if build type is Debug
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
 
 add_library(fusion STATIC
   src/Fusion.cpp
