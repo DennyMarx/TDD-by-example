@@ -1,5 +1,5 @@
 #ifndef FUSION_H
-#define FUSION_H 
+#define FUSION_H
 
 #include "DistanceSensor.hpp"
 #include <functional>
@@ -23,6 +23,5 @@ private:
     std::vector<DistanceSensor*> _distance_sensors;
     std::function<double()> _velocity_sensor;
 };
-
 
 #endif // FUSION_H

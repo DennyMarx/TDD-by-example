@@ -4,7 +4,6 @@
 
 using namespace testing;
 
-
 GTEST("Testing Time to Collision")
 {
     // test setup
@@ -44,10 +43,9 @@ GTEST("Testing Time to Collision")
     }
 }
 
-
 GTEST("Testing TTC is car is standing still")
 {
-    // test setup 
+    // test setup
     NiceGMock<DistanceSensor> distance_sensor_1{};
     NiceGMock<DistanceSensor> distance_sensor_2{};
     NiceGMock<DistanceSensor> distance_sensor_3{};
@@ -71,26 +69,22 @@ GTEST("Testing TTC is car is standing still")
         auto fusion = Fusion(distance_sensors, velocity_sensor);
         double result = 0;
         EXPECT_NO_THROW(result = fusion.calculateTimeToCollision());
-        EXPECT_EQ(result,std::numeric_limits<int>::min());
+        EXPECT_EQ(result, std::numeric_limits<int>::min());
     }
 }
-
 
 GTEST("Testing null pointer robustness")
 {
     // test setup
     std::vector<DistanceSensor*> distance_sensors;
-     
-    for(uint8_t i=0U; i<3; i++)
+
+    for (uint8_t i = 0U; i < 3; i++)
     {
         distance_sensors.push_back(nullptr);
     }
-   
+
     auto fusion = Fusion(distance_sensors, nullptr);
 
     // test expectations & test execution
     EXPECT_NO_THROW(fusion.calculateTimeToCollision());
 }
-
-
-

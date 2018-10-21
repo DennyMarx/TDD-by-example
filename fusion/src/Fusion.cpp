@@ -2,18 +2,14 @@
 #include "Fusion.hpp"
 #include <algorithm>
 
-
-// init constants 
+// init constants
 const double Fusion::THRESHOLD_CERTAINTY = 0.7;
-
 
 Fusion::Fusion(const std::vector<DistanceSensor*>& distance_sensors,
                std::function<double()> velocity_sensor)
-    : _distance_sensors(distance_sensors)
-    , _velocity_sensor(velocity_sensor)
+    : _distance_sensors(distance_sensors), _velocity_sensor(velocity_sensor)
 {
 }
-
 
 double Fusion::calculateTimeToCollision()
 {
